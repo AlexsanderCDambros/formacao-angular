@@ -20,9 +20,9 @@ export class TarefaService {
     localStorage['tarefas'] = JSON.stringify(tarefas);
   }
 
-  buscarPorId(id: number): Tarefa | undefined {
+  buscarPorId(id: number): Tarefa {
     const tarefas: Tarefa[] = this.listarTodos();
-    return tarefas.find(tarefa => tarefa.id === id);
+    return tarefas.find(tarefa => tarefa.id === id) || {} as Tarefa;
   }
 
   atualizar(tarefa: Tarefa): void {
