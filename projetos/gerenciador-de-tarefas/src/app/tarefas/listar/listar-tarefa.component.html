@@ -14,13 +14,17 @@
     </thead>
     <tbody>
         <tr *ngFor="let tarefa of tarefas">
-            <td [class.success]="!tarefa.concluida">
+            <td 
+                [class.success]="!tarefa.concluida"
+                [tarefaConcluida]="tarefa.concluida"
+                >
                 {{ tarefa.nome }}
             </td>
             <td style="width: 70px" class="text-center">
                 <input type="checkbox"
                 [value]="tarefa.id"
                 [checked]="tarefa.concluida"
+                (click)="alterarStatus(tarefa)"
                 >
             </td>
             <td class="text-center" style="width: 200px">
