@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Tarefa, TarefaService } from '../shared';
 
 @Component({
@@ -6,7 +6,7 @@ import { Tarefa, TarefaService } from '../shared';
   templateUrl: './listar-tarefa.component.html',
   styleUrls: ['./listar-tarefa.component.scss']
 })
-export class ListarTarefaComponent {
+export class ListarTarefaComponent implements OnInit{
 
   tarefas: Tarefa[] = [];
 
