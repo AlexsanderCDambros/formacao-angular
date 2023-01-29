@@ -1,4 +1,7 @@
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Router } from '@angular/router';
+import { TarefaService } from '../shared';
 
 import { ListarTarefaComponent } from './listar-tarefa.component';
 
@@ -8,7 +11,9 @@ describe('ListarTarefaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListarTarefaComponent ]
+      declarations: [ ListarTarefaComponent ],
+      providers: [TarefaService],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
     })
     .compileComponents();
 

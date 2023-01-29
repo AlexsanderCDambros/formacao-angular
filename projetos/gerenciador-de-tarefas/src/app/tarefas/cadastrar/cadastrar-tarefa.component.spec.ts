@@ -1,4 +1,7 @@
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NgForm, NgModel } from '@angular/forms';
+import { TarefaService } from '../shared';
 
 import { CadastrarTarefaComponent } from './cadastrar-tarefa.component';
 
@@ -8,7 +11,9 @@ describe('CadastrarTarefaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CadastrarTarefaComponent ]
+      declarations: [ CadastrarTarefaComponent, NgForm, NgModel ],
+      providers: [TarefaService],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
     })
     .compileComponents();
 
